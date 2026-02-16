@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AIコーディングアシスタントの使い方を可視化するインタラクティブガイド">
+  <!-- Security headers for public sharing -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; frame-ancestors 'none';">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()">
+  <title>AI Assistant Guide — できること＆使い方</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background decoration -->
+  <div class="bg-decoration">
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav__logo">🤖 AI Assistant Guide</div>
+      <ul class="nav__links">
+        <li><a href="#features" class="nav__link">できること</a></li>
+        <li><a href="#workflow" class="nav__link">使い方</a></li>
+        <li><a href="#prompts" class="nav__link">プロンプト例</a></li>
+        <li><a href="#tips" class="nav__link">コツ</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        AIコーディングアシスタント
+      </div>
+      <h1 class="hero__title">
+        何でも聞いて、<br><span class="hero__title-gradient">一緒につくろう。</span>
+      </h1>
+      <p class="hero__subtitle">
+        コードの作成からデバッグ、Webアプリ開発まで。<br>
+        あなたの開発パートナーとして、自然言語で指示するだけで作業を進められます。
+      </p>
+      <div class="hero__actions">
+        <a href="#features" class="btn btn--primary">できることを見る ↓</a>
+        <a href="#prompts" class="btn btn--ghost">プロンプト例を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Features</span>
+        <h2 class="section-header__title">何ができるの？</h2>
+        <p class="section-header__desc">6つの主要機能で、あなたの開発をトータルサポートします。カードをクリックして詳細を見てみましょう。</p>
+      </div>
+
+      <div class="features-grid">
+
+        <!-- Card 1: Coding -->
+        <div class="feature-card" data-feature>
+          <div class="feature-card__icon feature-card__icon--blue">💻</div>
+          <h3 class="feature-card__title">コーディング・開発</h3>
+          <p class="feature-card__desc">新規プロジェクトの作成、既存コードの修正、バグ修正、リファクタリングなど、あらゆるコーディング作業を支援します。</p>
+          <div class="feature-card__details" data-details>
+            <ul class="feature-card__detail-list">
+              <li class="feature-card__detail-item">ゼロからプロジェクトを構築</li>
+              <li class="feature-card__detail-item">既存コードのバグ修正・改善</li>
+              <li class="feature-card__detail-item">コードレビューとベストプラクティス提案</li>
+              <li class="feature-card__detail-item">Python, JavaScript, TypeScript, Go など多言語対応</li>
+            </ul>
+          </div>
+          <div class="feature-card__toggle">
+            <span data-toggle-text>詳細を見る</span>
+            <span class="feature-card__toggle-icon" data-toggle-icon>▼</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Web -->
+        <div class="feature-card" data-feature>
+          <div class="feature-card__icon feature-card__icon--purple">🌐</div>
+          <h3 class="feature-card__title">Web開発</h3>
+          <p class="feature-card__desc">HTML/CSS/JSからReact、Next.jsまで。美しくモダンなWebアプリケーションを一緒に構築できます。</p>
+          <div class="feature-card__details" data-details>
+            <ul class="feature-card__detail-list">
+              <li class="feature-card__detail-item">レスポンシブなUI設計と実装</li>
+              <li class="feature-card__detail-item">ダークモード、アニメーション、グラスモーフィズム</li>
+              <li class="feature-card__detail-item">APIサーバーの構築とデータベース連携</li>
+              <li class="feature-card__detail-item">SEO最適化と パフォーマンス改善</li>
+            </ul>
+          </div>
+          <div class="feature-card__toggle">
+            <span data-toggle-text>詳細を見る</span>
+            <span class="feature-card__toggle-icon" data-toggle-icon>▼</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Research -->
+        <div class="feature-card" data-feature>
+          <div class="feature-card__icon feature-card__icon--cyan">🔍</div>
+          <h3 class="feature-card__title">リサーチ・分析</h3>
+          <p class="feature-card__desc">コードベースの調査、技術的な情報検索、設計書やドキュメントの作成を行います。</p>
+          <div class="feature-card__details" data-details>
+            <ul class="feature-card__detail-list">
+              <li class="feature-card__detail-item">ファイル構造の把握と依存関係の分析</li>
+              <li class="feature-card__detail-item">Web検索による最新技術の調査</li>
+              <li class="feature-card__detail-item">実装計画書・設計書の作成</li>
+              <li class="feature-card__detail-item">コードのウォークスルー説明</li>
+            </ul>
+          </div>
+          <div class="feature-card__toggle">
+            <span data-toggle-text>詳細を見る</span>
+            <span class="feature-card__toggle-icon" data-toggle-icon>▼</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Browser -->
+        <div class="feature-card" data-feature>
+          <div class="feature-card__icon feature-card__icon--green">🖥️</div>
+          <h3 class="feature-card__title">ブラウザ操作</h3>
+          <p class="feature-card__desc">Webページを実際にブラウザで開いて操作やテストを行い、スクリーンショットや録画で結果を記録します。</p>
+          <div class="feature-card__details" data-details>
+            <ul class="feature-card__detail-list">
+              <li class="feature-card__detail-item">Webページの自動操作・テスト</li>
+              <li class="feature-card__detail-item">UIの動作確認とスクリーンショット</li>
+              <li class="feature-card__detail-item">操作フローの録画・記録</li>
+              <li class="feature-card__detail-item">フォーム入力やボタンクリックの自動化</li>
+            </ul>
+          </div>
+          <div class="feature-card__toggle">
+            <span data-toggle-text>詳細を見る</span>
+            <span class="feature-card__toggle-icon" data-toggle-icon>▼</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Image -->
+        <div class="feature-card" data-feature>
+          <div class="feature-card__icon feature-card__icon--orange">🎨</div>
+          <h3 class="feature-card__title">画像生成</h3>
+          <p class="feature-card__desc">UIのモックアップやアプリで使用するアセット画像をテキスト指示から生成できます。</p>
+          <div class="feature-card__details" data-details>
+            <ul class="feature-card__detail-list">
+              <li class="feature-card__detail-item">UIデザインのプロトタイプ生成</li>
+              <li class="feature-card__detail-item">Webアプリ用アセット画像の作成</li>
+              <li class="feature-card__detail-item">既存画像の編集・合成</li>
+              <li class="feature-card__detail-item">デザインフィードバックの反復</li>
+            </ul>
+          </div>
+          <div class="feature-card__toggle">
+            <span data-toggle-text>詳細を見る</span>
+            <span class="feature-card__toggle-icon" data-toggle-icon>▼</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Terminal -->
+        <div class="feature-card" data-feature>
+          <div class="feature-card__icon feature-card__icon--pink">⚙️</div>
+          <h3 class="feature-card__title">ターミナル操作</h3>
+          <p class="feature-card__desc">コマンドの実行、ビルド、テスト、パッケージ管理、環境セットアップなどを代行します。</p>
+          <div class="feature-card__details" data-details>
+            <ul class="feature-card__detail-list">
+              <li class="feature-card__detail-item">npm / pip などのパッケージ管理</li>
+              <li class="feature-card__detail-item">ビルド・テストの実行と結果確認</li>
+              <li class="feature-card__detail-item">Git操作（コミット、ブランチなど）</li>
+              <li class="feature-card__detail-item">開発環境のセットアップ</li>
+            </ul>
+          </div>
+          <div class="feature-card__toggle">
+            <span data-toggle-text>詳細を見る</span>
+            <span class="feature-card__toggle-icon" data-toggle-icon>▼</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Workflow -->
+  <section id="workflow">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">How to use</span>
+        <h2 class="section-header__title">どうやって使うの？</h2>
+        <p class="section-header__desc">自然言語で指示するだけ。4つのステップで開発が進みます。</p>
+      </div>
+
+      <div class="workflow-steps">
+
+        <div class="workflow-step" data-animate>
+          <div class="workflow-step__number">1</div>
+          <div class="workflow-step__content">
+            <h3 class="workflow-step__title">📝 やりたいことを伝える</h3>
+            <p class="workflow-step__desc">日本語でも英語でもOK。何を作りたいか、何を直したいかを自然な言葉で伝えてください。曖昧でも大丈夫——確認が必要なら質問します。</p>
+            <div class="workflow-step__example">ToDoアプリを作ってほしい</div>
+          </div>
+        </div>
+
+        <div class="workflow-step" data-animate>
+          <div class="workflow-step__number">2</div>
+          <div class="workflow-step__content">
+            <h3 class="workflow-step__title">📋 計画を確認する</h3>
+            <p class="workflow-step__desc">大きなタスクの場合、まず計画書を作成してレビューを依頼します。計画に問題がなければ承認し、修正したい点があればフィードバックしてください。</p>
+            <div class="workflow-step__example">計画を確認 → 承認 or フィードバック</div>
+          </div>
+        </div>
+
+        <div class="workflow-step" data-animate>
+          <div class="workflow-step__number">3</div>
+          <div class="workflow-step__content">
+            <h3 class="workflow-step__title">🚀 実装を見守る</h3>
+            <p class="workflow-step__desc">AIがファイルの作成・編集、コマンド実行、テストまで自動で進めます。コマンド実行時は安全確認のため承認を求められることがあります。</p>
+            <div class="workflow-step__example">進捗はタスクUIでリアルタイムに確認</div>
+          </div>
+        </div>
+
+        <div class="workflow-step" data-animate>
+          <div class="workflow-step__number">4</div>
+          <div class="workflow-step__content">
+            <h3 class="workflow-step__title">✅ 結果を確認・調整する</h3>
+            <p class="workflow-step__desc">完成したら結果を確認し、修正したい箇所があれば追加で指示してください。何度でも反復して改善できます。</p>
+            <div class="workflow-step__example">ここの色をもう少し暗くして</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Prompts -->
+  <section id="prompts">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Prompt Examples</span>
+        <h2 class="section-header__title">こう話しかけてみよう</h2>
+        <p class="section-header__desc">カテゴリ別のプロンプト例をコピーして使えます。</p>
+      </div>
+
+      <div class="prompts-tabs">
+        <button class="prompt-tab active" data-tab="all">すべて</button>
+        <button class="prompt-tab" data-tab="create">新規作成</button>
+        <button class="prompt-tab" data-tab="fix">修正・改善</button>
+        <button class="prompt-tab" data-tab="explain">調査・説明</button>
+        <button class="prompt-tab" data-tab="other">その他</button>
+      </div>
+
+      <div class="prompts-grid">
+
+        <div class="prompt-card visible" data-category="create">
+          <div class="prompt-card__label">新規作成</div>
+          <div class="prompt-card__text">Todoアプリを React + TypeScript で作ってください。ダークモード対応で。</div>
+          <button class="prompt-card__copy" data-copy>📋 コピー</button>
+        </div>
+
+        <div class="prompt-card visible" data-category="create">
+          <div class="prompt-card__label">新規作成</div>
+          <div class="prompt-card__text">REST APIサーバーをNode.js（Express）で作って。ユーザー認証付きで。</div>
+          <button class="prompt-card__copy" data-copy>📋 コピー</button>
+        </div>
+
+        <div class="prompt-card visible" data-category="fix">
+          <div class="prompt-card__label">修正・改善</div>
+          <div class="prompt-card__text">このファイルのバグを見つけて修正してください。エラーメッセージは「TypeError: Cannot read property」です。</div>
+          <button class="prompt-card__copy" data-copy>📋 コピー</button>
+        </div>
+
+        <div class="prompt-card visible" data-category="fix">
+          <div class="prompt-card__label">修正・改善</div>
+          <div class="prompt-card__text">このコードのパフォーマンスを改善して。特にデータベースクエリが遅いです。</div>
+          <button class="prompt-card__copy" data-copy>📋 コピー</button>
+        </div>
+
+        <div class="prompt-card visible" data-category="explain">
+          <div class="prompt-card__label">調査・説明</div>
+          <div class="prompt-card__text">このプロジェクトの構造を説明して。主なファイルと依存関係を教えて。</div>
+          <button class="prompt-card__copy" data-copy>📋 コピー</button>
+        </div>
+
+        <div class="prompt-card visible" data-category="explain">
+          <div class="prompt-card__label">調査・説明</div>
+          <div class="prompt-card__text">src/utils/auth.ts の認証フローを図で説明してください。</div>
+          <button class="prompt-card__copy" data-copy>📋 コピー</button>
+        </div>
+
+        <div class="prompt-card visible" data-category="other">
+          <div class="prompt-card__label">その他</div>
+          <div class="prompt-card__text">このページのスクリーンショットを撮って、デザインのフィードバックをください。</div>
+          <button class="prompt-card__copy" data-copy>📋 コピー</button>
+        </div>
+
+        <div class="prompt-card visible" data-category="other">
+          <div class="prompt-card__label">その他</div>
+          <div class="prompt-card__text">テストを書いて実行して。カバレッジ80%以上を目指して。</div>
+          <button class="prompt-card__copy" data-copy>📋 コピー</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section id="tips">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Tips</span>
+        <h2 class="section-header__title">うまく使うコツ</h2>
+        <p class="section-header__desc">より良い結果を得るためのポイントです。</p>
+      </div>
+
+      <div class="tips-grid">
+        <div class="tip-card" data-animate>
+          <div class="tip-card__emoji">🎯</div>
+          <h3 class="tip-card__title">具体的に伝える</h3>
+          <p class="tip-card__desc">「Webアプリを作って」より「Todoアプリをダークモードで作って」の方が良い結果になります。目的・技術スタック・デザインの好みを伝えましょう。</p>
+        </div>
+        <div class="tip-card" data-animate>
+          <div class="tip-card__emoji">🔄</div>
+          <h3 class="tip-card__title">反復して改善する</h3>
+          <p class="tip-card__desc">最初から完璧を求めなくてOK。まず大枠を作り、「ここを修正して」と追加指示で磨いていくのが効率的です。</p>
+        </div>
+        <div class="tip-card" data-animate>
+          <div class="tip-card__emoji">📁</div>
+          <h3 class="tip-card__title">ファイルを開いておく</h3>
+          <p class="tip-card__desc">修正したいファイルをエディタで開いておくと、AIがそのコンテキストを把握しやすくなります。</p>
+        </div>
+        <div class="tip-card" data-animate>
+          <div class="tip-card__emoji">✅</div>
+          <h3 class="tip-card__title">計画をレビューする</h3>
+          <p class="tip-card__desc">大きなタスクでは計画書が提示されます。実装前に内容を確認し、方向性が合っているか確認しましょう。</p>
+        </div>
+        <div class="tip-card" data-animate>
+          <div class="tip-card__emoji">🗣️</div>
+          <h3 class="tip-card__title">日本語でOK</h3>
+          <p class="tip-card__desc">日本語でも英語でも理解できます。コードのコメントや変数名の言語も指定可能です。</p>
+        </div>
+        <div class="tip-card" data-animate>
+          <div class="tip-card__emoji">⚠️</div>
+          <h3 class="tip-card__title">コマンド実行を確認</h3>
+          <p class="tip-card__desc">ファイル削除やインストールなどの操作は承認を求められます。内容を確認してから承認してください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">AI Assistant Guide — あなたの開発をサポートするAIコーディングアシスタント</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">↑</button>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
